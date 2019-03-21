@@ -39,7 +39,9 @@ public:
     
     //print
     void print();
-    std::ostream print(std::ostream &out);
+    void print() const;
+    std::ostream& print(std::ostream &out);
+    std::ostream& print(std::ostream &out) const;
 };
 
 #endif /* Rectangle_hpp */
