@@ -7,6 +7,7 @@
 //
 
 #include <iostream>
+#include "Rectangle.hpp"
 
 //function prototypes
 bool isInside(double oneCX,double oneCY, double oneH, double oneW, double twoCX, double twoCY, double twoH, double twoW);
@@ -25,6 +26,12 @@ int main(int argc, const char * argv[]) {
     double f = 5;
     double g = 0.5;
     double h = 3;
+    
+    Rectangle rect1(a,b,d,c);
+    Rectangle rect2(e,f,h,g);
+    
+    rect1.print();
+    rect2.print();
     
     std::cout<<isInside(a, b, c, d, e, f, g, h)<<std::endl;
     std::cout<<isOutside(a, b, c, d, e, f, g, h)<<std::endl;
