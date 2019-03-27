@@ -14,6 +14,10 @@ bool isInside(double oneCX,double oneCY, double oneH, double oneW, double twoCX,
 bool isOutside(double oneCX,double oneCY, double oneH, double oneW, double twoCX, double twoCY, double twoH, double twoW);
 bool doesOverlap(double oneCX,double oneCY, double oneH, double oneW, double twoCX, double twoCY, double twoH, double twoW);
 
+bool isInside(Rectangle one, Rectangle two);
+bool isOutside(Rectangle one, Rectangle two);
+bool doesOverlap(Rectangle one, Rectangle two);
+
 int main(int argc, const char * argv[]) {
     // insert code here...
     std::cout << "Hello, World!\n";
@@ -42,7 +46,7 @@ int main(int argc, const char * argv[]) {
 
 bool isInside(double oneCX,double oneCY, double oneH, double oneW, double twoCX, double twoCY, double twoH, double twoW)
 {
-    if((oneCX+oneW<twoCX+twoW) && (oneCX -oneW>twoCX-twoW))
+    if((oneCX+oneW<twoCX+twoW) && (oneCX-oneW>twoCX-twoW))
     {
         if((oneCY+oneH<twoCY+twoH) && (oneCY-oneH>twoCY-twoH))
         {
@@ -78,3 +82,7 @@ bool doesOverlap(double oneCX,double oneCY, double oneH, double oneW, double two
     }
     return false;
 }
+
+bool isInside(Rectangle one, Rectangle two);
+bool isOutside(Rectangle one, Rectangle two);
+bool doesOverlap(Rectangle one, Rectangle two);
