@@ -37,11 +37,95 @@ int main(int argc, const char * argv[]) {
     rect1.print();
     rect2.print();
     
-    std::cout<<isInside(a, b, c, d, e, f, g, h)<<std::endl;
-    std::cout<<isOutside(a, b, c, d, e, f, g, h)<<std::endl;
-    std::cout<<doesOverlap(a, b, c, d, e, f, g, h)<<std::endl;
+    //std::cout<<isInside(a, b, c, d, e, f, g, h)<<std::endl;
+    //std::cout<<isOutside(a, b, c, d, e, f, g, h)<<std::endl;
+    //std::cout<<doesOverlap(a, b, c, d, e, f, g, h)<<std::endl;
+    
+    std::cout<<isInside(rect1, rect2)<<std::endl;
+    std::cout<<isOutside(rect1, rect2)<<std::endl;
+    std::cout<<doesOverlap(rect1, rect2)<<std::endl;
     
     return 0;
+}
+
+bool isInside(Rectangle one, Rectangle two)
+{
+    double oneCenterX = one.getCenterX();
+    double oneCenterY = one.getCenterY();
+    double oneLength = one.getLength();
+    double oneWidth = one.getWidth();
+    
+    double twoCenterX = two.getCenterX();
+    double twoCenterY = two.getCenterY();
+    double twoLength = two.getLength();
+    double twoWidth = two.getWidth();
+    
+    if ((oneCenterX + oneWidth) < (twoCenterX + twoWidth))
+    {
+        if((oneCenterX - oneWidth) > (twoCenterX - twoWidth))
+        {
+            if((oneCenterY + oneLength) < (twoCenterX + twoWidth))
+            {
+                if((oneCenterY - oneLength) > (twoCenterY - twoLength))
+                {
+                    return true;
+                }
+            }
+        }
+    }
+    if ((oneCenterX + oneWidth) > (twoCenterX + twoWidth))
+    {
+        if((oneCenterX - oneWidth) < (twoCenterX - twoWidth))
+        {
+            if((oneCenterY + oneLength) > (twoCenterX + twoWidth))
+            {
+                if((oneCenterY - oneLength) < (twoCenterY - twoLength))
+                {
+                    return true;
+                }
+            }
+        }
+    }
+    return false;
+}
+bool isOutside(Rectangle one, Rectangle two)
+{
+    double oneCenterX = one.getCenterX();
+    double oneCenterY = one.getCenterY();
+    double oneLength = one.getLength();
+    double oneWidth = one.getWidth();
+    
+    double twoCenterX = two.getCenterX();
+    double twoCenterY = two.getCenterY();
+    double twoLength = two.getLength();
+    double twoWidth = two.getWidth();
+    
+    if ((oneCenterX + oneWidth) < (twoCenterX - twoWidth))
+    {
+        return true;
+    }
+    if ((oneCenterY - oneWidth) > (twoCenterX + twoWidth))
+    {
+        return true;
+    }
+    if ((oneCenterY + oneLength) < (twoCenterY - twoLength))
+    {
+        return true;
+    }
+    if ((oneCenterY - oneLength) > (twoCenterY - twoLength))
+    {
+        return true;
+    }
+    return false;
+}
+
+bool doesOverlap(Rectangle one, Rectangle two)
+{
+    if(!isInside(one, two)  &&  !isOutside(one, two))
+    {
+        return true;
+    }
+    return false;
 }
 
 bool isInside(double oneCX,double oneCY, double oneH, double oneW, double twoCX, double twoCY, double twoH, double twoW)
