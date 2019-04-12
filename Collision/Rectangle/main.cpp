@@ -10,17 +10,11 @@
 #include "Rectangle.hpp"
 
 //function prototypes
-bool isInside(double oneCX,double oneCY, double oneH, double oneW, double twoCX, double twoCY, double twoH, double twoW);
-bool isOutside(double oneCX,double oneCY, double oneH, double oneW, double twoCX, double twoCY, double twoH, double twoW);
-bool doesOverlap(double oneCX,double oneCY, double oneH, double oneW, double twoCX, double twoCY, double twoH, double twoW);
-
 bool isInside(Rectangle one, Rectangle two);
 bool isOutside(Rectangle one, Rectangle two);
 bool doesOverlap(Rectangle one, Rectangle two);
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
     
     double a = 2.5;
     double b = 4;
@@ -35,15 +29,34 @@ int main(int argc, const char * argv[]) {
     Rectangle rect2(e,f,h,g);
     
     rect1.print();
+    std::cout<<std::endl;
     rect2.print();
+    std::cout<<std::endl;
     
-    //std::cout<<isInside(a, b, c, d, e, f, g, h)<<std::endl;
-    //std::cout<<isOutside(a, b, c, d, e, f, g, h)<<std::endl;
-    //std::cout<<doesOverlap(a, b, c, d, e, f, g, h)<<std::endl;
-    
-    std::cout<<isInside(rect1, rect2)<<std::endl;
-    std::cout<<isOutside(rect1, rect2)<<std::endl;
-    std::cout<<doesOverlap(rect1, rect2)<<std::endl;
+    if(isInside(rect1, rect2))
+    {
+        std::cout<<"One rectangle is within the other rectangle"<<std::endl;
+    }
+    else
+    {
+        std::cout<<"One rectangle is not within the other rectangle"<<std::endl;
+    }
+    if(isOutside(rect1, rect2))
+    {
+        std::cout<<"Rectangles are seperate and outside of each other"<<std::endl;
+    }
+    else
+    {
+         std::cout<<"Rectangles are not seperate and not outside of each other"<<std::endl;
+    }
+    if(doesOverlap(rect1, rect2))
+    {
+        std::cout<<"One rectangle intersects the other rectangle"<<std::endl;
+    }
+    else
+    {
+        std::cout<<"The rectangles do not intersect each other"<<std::endl;
+    }
     
     return 0;
 }
@@ -127,46 +140,3 @@ bool doesOverlap(Rectangle one, Rectangle two)
     }
     return false;
 }
-
-bool isInside(double oneCX,double oneCY, double oneH, double oneW, double twoCX, double twoCY, double twoH, double twoW)
-{
-    if((oneCX+oneW<twoCX+twoW) && (oneCX-oneW>twoCX-twoW))
-    {
-        if((oneCY+oneH<twoCY+twoH) && (oneCY-oneH>twoCY-twoH))
-        {
-            return true;
-        }
-    }
-    if((oneCX+oneW>twoCX+twoW) && (oneCX -oneW<twoCX-twoW))
-    {
-        if((oneCY+oneH>twoCY+twoH) && (oneCY-oneH<twoCY-twoH))
-        {
-            return true;
-        }
-    }
-    return false;
-}
-bool isOutside(double oneCX,double oneCY, double oneH, double oneW, double twoCX, double twoCY, double twoH, double twoW)
-{
-    if((oneCX+oneW<twoCX-twoW) || (oneCY -oneW>twoCX+twoW))
-    {
-        return true;
-    }
-    if((oneCY+oneH<twoCY-twoH) || (oneCY-oneH>twoCY+twoH))
-    {
-        return true;
-    }
-    return false;
-}
-bool doesOverlap(double oneCX,double oneCY, double oneH, double oneW, double twoCX, double twoCY, double twoH, double twoW)
-{
-    if(!isInside(oneCX, oneCY, oneH, oneW, twoCX, twoCY, twoH, twoW) && !isOutside(oneCX, oneCY, oneH, oneW, twoCX, twoCY, twoH, twoW))
-    {
-        return true;
-    }
-    return false;
-}
-
-bool isInside(Rectangle one, Rectangle two);
-bool isOutside(Rectangle one, Rectangle two);
-bool doesOverlap(Rectangle one, Rectangle two);
