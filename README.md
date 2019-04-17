@@ -1,3 +1,6 @@
+# Code from this repository will be shifted elsewhere
+# This project will now be dedicated to collision detection 
+
 # Puzzles
 Interesting short code puzzles and challenges
 
