@@ -1,5 +1,5 @@
 //
-//  main.cpp
+//  solution.cpp
 //  Rectangle
 //
 //  Created by Harsha Srikara on 1/28/19.
@@ -52,7 +52,7 @@ int main(int argc, const char * argv[]) {
     }
     else
     {
-         std::cout<<"Rectangles are not seperate and not outside of each other"<<std::endl;
+        std::cout<<"Rectangles are not seperate and not outside of each other"<<std::endl;
     }
     //check if they overlap
     if(doesOverlap(rect1, rect2))
@@ -80,8 +80,33 @@ bool isInside(Rectangle one, Rectangle two)
     double twoLength = two.getLength();
     double twoWidth = two.getWidth();
     
-    /* write code here */
     
+    if ((oneCenterX + oneWidth) < (twoCenterX + twoWidth))
+    {
+        if((oneCenterX - oneWidth) > (twoCenterX - twoWidth))
+        {
+            if((oneCenterY + oneLength) < (twoCenterX + twoWidth))
+            {
+                if((oneCenterY - oneLength) > (twoCenterY - twoLength))
+                {
+                    return true;
+                }
+            }
+        }
+    }
+    if ((oneCenterX + oneWidth) > (twoCenterX + twoWidth))
+    {
+        if((oneCenterX - oneWidth) < (twoCenterX - twoWidth))
+        {
+            if((oneCenterY + oneLength) > (twoCenterX + twoWidth))
+            {
+                if((oneCenterY - oneLength) < (twoCenterY - twoLength))
+                {
+                    return true;
+                }
+            }
+        }
+    }
     return false;
 }
 bool isOutside(Rectangle one, Rectangle two)
@@ -97,15 +122,31 @@ bool isOutside(Rectangle one, Rectangle two)
     double twoLength = two.getLength();
     double twoWidth = two.getWidth();
     
-    /* write code here */
-    
+    if ((oneCenterX + oneWidth) < (twoCenterX - twoWidth))
+    {
+        return true;
+    }
+    if ((oneCenterY - oneWidth) > (twoCenterX + twoWidth))
+    {
+        return true;
+    }
+    if ((oneCenterY + oneLength) < (twoCenterY - twoLength))
+    {
+        return true;
+    }
+    if ((oneCenterY - oneLength) > (twoCenterY - twoLength))
+    {
+        return true;
+    }
     return false;
 }
 
 //basically if the rectangles arent inside or outside they overlap
 bool doesOverlap(Rectangle one, Rectangle two)
 {
-    /* write code here */
-    
+    if(!isInside(one, two)  &&  !isOutside(one, two))
+    {
+        return true;
+    }
     return false;
 }

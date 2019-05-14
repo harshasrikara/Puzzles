@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F780B4F5228B8BE2001D1E65 /* solution.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F780B4F4228B8BE2001D1E65 /* solution.cpp */; };
 		F7A0485A225E7ADE005C729F /* original.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F7A04859225E7ADE005C729F /* original.cpp */; };
 		F7C9A88D2243294600C14D0A /* Rectangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F7C9A88B2243294600C14D0A /* Rectangle.cpp */; };
 		F7FEEBB521FFC940006D9AD2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F7FEEBB421FFC940006D9AD2 /* main.cpp */; };
@@ -25,6 +26,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F780B4F4228B8BE2001D1E65 /* solution.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = solution.cpp; sourceTree = "<group>"; };
 		F7A04859225E7ADE005C729F /* original.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = original.cpp; sourceTree = "<group>"; };
 		F7C9A88B2243294600C14D0A /* Rectangle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Rectangle.cpp; sourceTree = "<group>"; };
 		F7C9A88C2243294600C14D0A /* Rectangle.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Rectangle.hpp; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				F7FEEBB421FFC940006D9AD2 /* main.cpp */,
+				F780B4F4228B8BE2001D1E65 /* solution.cpp */,
 				F7C9A88B2243294600C14D0A /* Rectangle.cpp */,
 				F7C9A88C2243294600C14D0A /* Rectangle.hpp */,
 				F7A04859225E7ADE005C729F /* original.cpp */,
@@ -129,6 +132,7 @@
 			files = (
 				F7FEEBB521FFC940006D9AD2 /* main.cpp in Sources */,
 				F7A0485A225E7ADE005C729F /* original.cpp in Sources */,
+				F780B4F5228B8BE2001D1E65 /* solution.cpp in Sources */,
 				F7C9A88D2243294600C14D0A /* Rectangle.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
