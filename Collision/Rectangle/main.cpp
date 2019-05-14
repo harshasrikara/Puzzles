@@ -16,6 +16,7 @@ bool doesOverlap(Rectangle one, Rectangle two);
 
 int main(int argc, const char * argv[]) {
     
+    //initialize variables
     double a = 2.5;
     double b = 4;
     double c = 2.5;
@@ -25,14 +26,17 @@ int main(int argc, const char * argv[]) {
     double g = 0.5;
     double h = 3;
     
+    //create rectangles
     Rectangle rect1(a,b,d,c);
     Rectangle rect2(e,f,h,g);
     
+    //print out rectangle information
     rect1.print();
     std::cout<<std::endl;
     rect2.print();
     std::cout<<std::endl;
     
+    //check if inside
     if(isInside(rect1, rect2))
     {
         std::cout<<"One rectangle is within the other rectangle"<<std::endl;
@@ -41,6 +45,7 @@ int main(int argc, const char * argv[]) {
     {
         std::cout<<"One rectangle is not within the other rectangle"<<std::endl;
     }
+    //check if outside
     if(isOutside(rect1, rect2))
     {
         std::cout<<"Rectangles are seperate and outside of each other"<<std::endl;
@@ -49,6 +54,7 @@ int main(int argc, const char * argv[]) {
     {
          std::cout<<"Rectangles are not seperate and not outside of each other"<<std::endl;
     }
+    //check if they overlap
     if(doesOverlap(rect1, rect2))
     {
         std::cout<<"One rectangle intersects the other rectangle"<<std::endl;
@@ -63,6 +69,7 @@ int main(int argc, const char * argv[]) {
 
 bool isInside(Rectangle one, Rectangle two)
 {
+    //load variables
     double oneCenterX = one.getCenterX();
     double oneCenterY = one.getCenterY();
     double oneLength = one.getLength();
@@ -72,6 +79,7 @@ bool isInside(Rectangle one, Rectangle two)
     double twoCenterY = two.getCenterY();
     double twoLength = two.getLength();
     double twoWidth = two.getWidth();
+    
     
     if ((oneCenterX + oneWidth) < (twoCenterX + twoWidth))
     {
@@ -103,6 +111,7 @@ bool isInside(Rectangle one, Rectangle two)
 }
 bool isOutside(Rectangle one, Rectangle two)
 {
+    //load variables
     double oneCenterX = one.getCenterX();
     double oneCenterY = one.getCenterY();
     double oneLength = one.getLength();
@@ -132,6 +141,7 @@ bool isOutside(Rectangle one, Rectangle two)
     return false;
 }
 
+//basically if the rectangles arent inside or outside they overlap
 bool doesOverlap(Rectangle one, Rectangle two)
 {
     if(!isInside(one, two)  &&  !isOutside(one, two))
