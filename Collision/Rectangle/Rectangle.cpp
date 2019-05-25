@@ -23,7 +23,7 @@ Rectangle::Rectangle(double CX, double CY, double wid, double len)
     width = wid;
     length = len;
 }
-
+/*
 //setters
 void Rectangle::setCenterX(double CX)
 {
@@ -32,7 +32,7 @@ void Rectangle::setCenterX(double CX)
 void Rectangle::setCenterY(double CY)
 {
     centerY = CY;
-}
+}*/
 void Rectangle::setWidth(double wid)
 {
     width = wid;
@@ -41,7 +41,7 @@ void Rectangle::setLength(double len)
 {
     length = len;
 }
-
+/*
 //getters
 double Rectangle::getCenterX() const
 {
@@ -50,7 +50,7 @@ double Rectangle::getCenterX() const
 double Rectangle::getCenterY() const
 {
     return centerY;
-}
+}*/
 double Rectangle::getWidth() const
 {
     return width;
