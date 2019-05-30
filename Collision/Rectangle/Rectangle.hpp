@@ -12,7 +12,7 @@
 #include <iostream>
 #include "Shape.hpp"
 
-class Rectangle : public  Shape
+class Rectangle// : public  Shape
 {
 private:
     //variables
@@ -27,14 +27,14 @@ public:
     Rectangle(double CX, double CY, double wid, double len);
     
     //setters
-    //void setCenterX(double CX);
-    //void setCenterY(double CY);
+    void setCenterX(double CX);
+    void setCenterY(double CY);
     void setWidth(double wid);
     void setLength(double len);
     
     //getters
-    //double getCenterX() const;
-    //double getCenterY() const;
+    double getCenterX() const;
+    double getCenterY() const;
     double getWidth() const;
     double getLength() const;
     
