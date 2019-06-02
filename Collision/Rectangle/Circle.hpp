@@ -26,7 +26,7 @@ public:
     //setters
     void setCenterX(double CX);
     void setCenterY(double CY);
-    void setRadius(double wid);
+    void setRadius(double rad);
     
     //getters
     double getCenterX() const;
