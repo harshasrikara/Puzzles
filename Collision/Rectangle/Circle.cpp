@@ -49,3 +49,28 @@ void Circle::setRadius(double rad)
 {
     radius = rad;
 }
+
+
+//print
+void Circle::print()
+{
+    print(std::cout);
+}
+void Circle::print() const
+{
+    print(std::cout);
+}
+std::ostream& Circle::print(std::ostream &out)
+{
+    out<<"Circle"<<std::endl;
+    out<<"Center is ("<<getCenterX()<<","<<getCenterY()<<")"<<std::endl;
+    out<<"Radius - "<<getRadius()<<std::endl;
+    return out;
+}
+std::ostream& Circle::print(std::ostream &out) const
+{
+    out<<"Circle"<<std::endl;
+    out<<"Center is ("<<getCenterX()<<","<<getCenterY()<<")"<<std::endl;
+    out<<"Radius - "<<getRadius()<<std::endl;
+    return out;
+}
