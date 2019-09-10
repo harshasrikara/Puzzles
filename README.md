@@ -1,11 +1,6 @@
 # Collision Detector
 Interesting short code challenges to detect collisions
 
-# This project will now be dedicated to collision detection 
-
-### Quick Note:
-Puzzle one is complete and ready to try out. 
-
 ### Brief Introduction
 This repository will contain several puzzles and challenges that I have attempted and found interesting over the course of my undergraduate career. I will keep it updated with new ones as I try them and find solutions. Each puzzle that I post will have a try it yourself code template that sets up the challenge for you and a second piece of code that contains my solution to it. If you come up a more elegant or simpler solution, I'd love to hear about it. Create a pull request with your new solution for review and it can be added to the set of solutions for a given problem. Each puzzle will have its own readme with instructions on getting started. 
 
