@@ -7,5 +7,5 @@ This repository will contain several puzzles and challenges that I have attempte
 ### Adding New Puzzles
 If you have come up with a new puzzle that you would like featured here, please create a pull request and add it with the same formatting as all the other puzzles. Create a readme within your puzzle file that appropriately provides instructions on how to start and any other relevant help that may be required. 
 
-### Coming up
+### Coming up soon
 Collision detection for circles
