@@ -1,4 +1,4 @@
-# Collision Detection
+# Collision Detections
 Interesting short code challenges to detect collisions, intersections, venn diagram formations etc
 
 ### Brief Introduction
